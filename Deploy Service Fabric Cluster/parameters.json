@@ -1,0 +1,78 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "clusterName": {
+      "value": "spkl-sf-bs-dev-eus-1"
+    },
+    "clusterLocation": {
+      "value": "eastus"
+    },
+    "computeLocation": {
+      "value": "eastus"
+    },
+    "adminUserName": {
+      "value": "zhouj"
+    },
+    "adminPassword": {
+      "value": "Zjy498072205"
+    },
+    "nicName": {
+      "value": "NIC-spkl-sf-bs-dev-eus-1"
+    },
+    "publicIPAddressName": {
+      "value": "spkl-sf-bs-dev-eus-1-PubIP"
+    },
+    "dnsName": {
+      "value": "spkl-sf-bs-dev-eus-1"
+    },
+    "virtualNetworkName": {
+      "value": "VNet-spkl-sf-bs-dev-eus-1"
+    },
+    "lbName": {
+      "value": "LB-spkl-sf-bs-dev-eus-1"
+    },
+    "lbIPName": {
+      "value": "LBIP-spkl-sf-bs-dev-eus-1"
+    },
+    "applicationDiagnosticsStorageAccountName": {
+      "value": "sfdgspklsfbsdeveus17662"
+    },
+    "supportLogStorageAccountName": {
+      "value": "sflogsspklsfbsdeveus5128"
+    },
+    "sourceVaultValue": {
+      "value": "/subscriptions/39915866-d034-4c80-b4e7-4e617cb94722/resourceGroups/zhouj-rg/providers/Microsoft.KeyVault/vaults/spkl-kv-bs-dev-eus-0"
+    },
+    "certificateUrlValue": {
+      "value": "https://spkl-kv-bs-dev-eus-0.vault.azure.net/secrets/spkl-sf-bs-dev-eus-0/a05568afed1e48359602de87faf8c5a9"
+    },
+    "certificateThumbprint": {
+      "value": "1F9AFD1893C2FA87F734F7FA092EC1D602E9F204"
+    },
+    "vmImageSku": {
+      "value": "Datacenter-Core-1803-with-Containers-smalldisk"
+    },
+    "vmImageOffer": {
+      "value": "WindowsServerSemiAnnual"
+    },
+    "nt0ephemeralStartPort": {
+      "value": 49152
+    },
+    "nt0ephemeralEndPort": {
+      "value": 65534
+    },
+    "nt0applicationStartPort": {
+      "value": 20000
+    },
+    "nt0applicationEndPort": {
+      "value": 30000
+    },
+    "nt0fabricTcpGatewayPort": {
+      "value": 19000
+    },
+    "nt0fabricHttpGatewayPort": {
+      "value": 19080
+    }
+  }
+}
