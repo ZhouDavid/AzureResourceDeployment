@@ -12,6 +12,7 @@ param(
     [string]
     $ContainerName
 )
+
 $StorageAccountKey = $(Get-AzStorageAccountKey -ResourceGroupName $ResourceGroup -AccountName $StorageAccountName)[0].Value
 Write-Host $StorageAccountKey
 $ctx = New-AzStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey 
