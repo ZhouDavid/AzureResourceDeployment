@@ -9,8 +9,9 @@ foreach ($regionSpec in $jsonObj.RegionSpecs){
         $env = $regionSpec.Environment
         $rg = "spkl-ehn-adx-rt-$env-$regionAlias-0"
         $ehNamespace = $rg
-        $ehName = "eh-racktelemetry-sel"
-        $cg = "cg-0"
+        $ehName = "eh-racktelemetry"
+        # $ehName = "eh-racktelemetry-sel"
+        $cg = "cg-1"
         .\NewEventhub.ps1 -ResourceGroup $rg -EhNamespace $ehNamespace -Location $location -EhName $ehName -ConsumerGroupName $cg
     }
     catch{

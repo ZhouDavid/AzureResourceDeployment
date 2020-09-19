@@ -9,7 +9,7 @@ foreach ($regionSpec in $jsonObj.RegionSpecs){
         $env = $regionSpec.Environment
         $rg = "spkl-adx-$env-$regionAlias-0"
         $cluster = "spkladx$env$regionAlias"+"x0"
-        $dataConnection = "conn_racktelemetry"
+        $dataConnection = "conn_racktelemetry2"
         # $dataConnection = "conn_racktelemetry-sel"
         
         $ehNamespaceName = "spkl-ehn-adx-rt-$env-$regionAlias-0"
@@ -24,7 +24,7 @@ foreach ($regionSpec in $jsonObj.RegionSpecs){
 
         $table = "RackTelemetry"
         # $table = "RackTelemetrySystemEventLog"
-        .\NewKustoDataConnection.ps1 -ResourceGroup $rg -Cluster $cluster -DataConnection $dataConnection -Location $location -EventHubResourceId $ehResourceId -StorageAccountResourceId $storResourceId -Table $table
+        .\NewKustoDataConnection.ps1 -ResourceGroup $rg -Cluster $cluster -Database "defaultdb2" -DataConnection $dataConnection -Location $location -EventHubResourceId $ehResourceId -ConsumerGroup "cg-1" -StorageAccountResourceId $storResourceId -Table $table
     }
     catch{
         Write-Debug $SubId
