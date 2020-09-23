@@ -1,10 +1,16 @@
 # Set $env:DATABRICKS_TOKEN
 param(
-    [Parameter(Mandatory=$False)]
+    [Parameter(Mandatory=$True)]
     [string]
-    $Token = ""
+    $Token,
+
+    [Parameter(Mandatory=$True)]
+    [string]
+    $LocalDir,
+
+    [Parameter(Mandatory=$True)]
+    [string]
+    $UploadDir
 )
-if("" -ne $Token){
-    $env:DATABRICKS_TOKEN = $Token
-}
-databricks workspace import_dir "D:\\Microsoft Work\\repo\\CSI-HHS\\src\\Streaming\\SparkStreaming\\Code\\streaming" /streaming -o
+$env:DATABRICKS_TOKEN=$Token
+databricks workspace import_dir $LocalDir  -o $UploadDir
