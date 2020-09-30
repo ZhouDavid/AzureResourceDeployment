@@ -9,9 +9,9 @@ param(
     [string]
     $ExportPath = ".",
 
-    [Parameter(Mandatory = $False)]
+    [Parameter(Mandatory = $True)]
     [string]
-    $DatabricksToken = "dapi31f8232db201869429b64a8615b49c86" 
+    $DatabricksToken 
 )
 
 # setup access

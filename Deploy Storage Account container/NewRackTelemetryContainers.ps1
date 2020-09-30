@@ -7,10 +7,14 @@ foreach ($regionSpec in $jsonObj.RegionSpecs){
         Write-Debug $SubId
         $regionAlias = $regionSpec.RegionAlias
         $env = $regionSpec.Environment
-        $storageAccountName = "spklsasf$env$regionAlias"+"x0"
-        $rg = "spkl-sa-sf-$env-$regionAlias-0"
-        $containerName = "racktelemetry-checkpoint-0"
+        $storageAccountName = "spkladladx$env$regionAlias" + "x0"
+        # $storageAccountName = "spklsasf$env$regionAlias"+"x0"
+        $rg = "spkl-adl-adx-$env-$regionAlias-0"
+        # $rg = "spkl-sa-sf-$env-$regionAlias-0"
+        $containerName = "racktelemetry"
+        # $containerName = "racktelemetry-checkpoint-0"
         .\NewContainer.ps1 -ResourceGroup $rg -StorageAccountName $storageAccountName -ContainerName $containerName 
+        # .\RemoveContainer.ps1 -ResourceGroup $rg -StorageAccountName $storageAccountName -ContainerName $containerName 
     }
     catch{
         Write-Debug $SubId
