@@ -33,6 +33,13 @@ foreach ($regionSpec in $jsonObj.RegionSpecs){
         $storRg = "spkl-sa-sf-$env-$regionAlias-0"
         $resourceId = "/subscriptions/$SubId/resourceGroups/$storRg/providers/Microsoft.Storage/storageAccounts/$storName"
         New-AzRoleAssignment -ObjectId $ObjectId -RoleDefinitionName $RoleDetinitionName -Scope $resourceId
+        
+        # set adl queue role assignment
+        $storName = "spkladlrt$env$regionAlias"+"x0"
+        $storRg = "spkl-adl-rt-$env-$regionAlias-0"
+        $roleDetinitionName = "Storage Queue Data Contributor"
+        $resourceId = "/subscriptions/$SubId/resourceGroups/$storRg/providers/Microsoft.Storage/storageAccounts/$storName"
+        New-AzRoleAssignment -ObjectId $ObjectId -RoleDefinitionName $RoleDetinitionName -Scope $resourceId
     }
     catch{
         Write-Debug $SubId

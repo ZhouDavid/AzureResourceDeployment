@@ -20,16 +20,16 @@ param(
     $ConsumerGroupName
 )
 try{
-    #New-AzResourceGroup -Name $ResourceGroup -Location $Location
+    # New-AzResourceGroup -Name $ResourceGroup -Location $Location
 }catch{}
 try{
     #New-AzEventHubNamespace -ResourceGroupName $ResourceGroup -NamespaceName $EhNamespace -Location $Location
 }catch{}
 try{
     # New-AzEventHub -ResourceGroupName $ResourceGroup -NamespaceName $EhNamespace -EventhubName $EhName -PartitionCount 32 -MessageRetentionInDays 7
-    # Remove-AzEventHub -ResourceGroupName $ResourceGroup -Namespace $EhNamespace -Name $EhName
+    Remove-AzEventHub -ResourceGroupName $ResourceGroup -Namespace $EhNamespace -Name $EhName
 }catch{}
 try{
-    New-AzEventHubConsumerGroup -ResourceGroupName $ResourceGroup -Namespace $EhNamespace -EventHub $EhName -Name $ConsumerGroupName
+    # New-AzEventHubConsumerGroup -ResourceGroupName $ResourceGroup -Namespace $EhNamespace -EventHub $EhName -Name $ConsumerGroupName
 }catch{}
 

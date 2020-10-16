@@ -1,0 +1,15 @@
+{
+    "name": "streaming_racktelemetry-__ENV__-__REGION__-1",
+    "existing_cluster_id": "__EXISTING_CLUSTER_ID__",
+    "libraries": [
+    ],
+    "max_retries": -1,
+    "min_retry_interval_millis": 60000,
+    "notebook_task": {
+        "notebook_path": "__ROOT__/racktelemetry/main",
+        "base_parameters": {
+            "env": "__ENV__-__REGION__"
+        }
+    },
+    "max_concurrent_runs": 1    
+}

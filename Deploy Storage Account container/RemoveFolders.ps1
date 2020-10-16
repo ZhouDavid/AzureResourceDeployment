@@ -1,0 +1,1 @@
+azcopy rm "https://spklsasfinteusx0.blob.core.windows.net/racktelemetry-checkpoint-0/?sv=2019-12-12&ss=bfqt&srt=sco&sp=rwdlacupx&se=2020-10-03T08:47:07Z&st=2020-10-03T00:47:07Z&spr=https&sig=fGosI7vERVoSyIOFtbNHk2heRMtZ4e7HCzfC9NJxg7w%3D" --recursive=true --include-pattern="*"

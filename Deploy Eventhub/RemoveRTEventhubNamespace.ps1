@@ -5,14 +5,13 @@ foreach ($regionSpec in $jsonObj.RegionSpecs){
         Set-AzContext -SubscriptionId $SubId
         Write-Debug $SubId
         $regionAlias = $regionSpec.RegionAlias
-        $location = $regionSpec.RegionShortName
         $env = $regionSpec.Environment
-        $rg = "spkl-ehn-adx-rt-$env-$regionAlias-0"
-        $ehNamespace = $rg
-        # $ehName = "eh-racktelemetrysel"
-        $ehName = "eh-racktelemetry-sel"
-        $cg = "cg-0"
-        .\NewEventhub.ps1 -ResourceGroup $rg -EhNamespace $ehNamespace -Location $location -EhName $ehName -ConsumerGroupName $cg
+        for($i=0;$i -lt 10;$i++){
+            $rg = "spkl-ehn-ro-$env-$regionAlias-$i"
+            $ehNamespace = $rg
+            Write-Host $ehNamespace
+            Remove-AzEventHubNamespace -ResourceGroupName $rg -Name $ehNamespace
+        }
     }
     catch{
         Write-Debug $SubId
