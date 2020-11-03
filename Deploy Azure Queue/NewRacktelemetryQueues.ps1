@@ -8,7 +8,7 @@ foreach ($regionSpec in $jsonObj.RegionSpecs){
         $env = $regionSpec.Environment
         $storageAccountName = "spkladlrt$env$regionAlias"+"x0"
         $rg = "spkl-adl-rt-$env-$regionAlias-0"
-        $queueName = "racktelemetry"
+        $queueName = "racktelemetry-adl"
         .\NewStorageQueue.ps1 -ResourceGroup $rg -StorageAccountName $storageAccountName -QueueName $queueName
     }
     catch{

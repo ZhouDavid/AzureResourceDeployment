@@ -17,8 +17,8 @@
         {
             "env":"prod",
             "region_alias":"brs",
-            "region":"brazilsouth",
-            "databricks_token":"dapi795da38ed022af94f63a2f9c24334742",
+            "region":"eastus",
+            "databricks_token":"dapi77fac6d8b31877ca0a54552527af08e0",
             "existing_cluster_id":"1001-233937-maple713"
         },
         {

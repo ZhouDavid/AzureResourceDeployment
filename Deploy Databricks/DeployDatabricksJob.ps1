@@ -2,7 +2,7 @@
 param(
     [Parameter(Mandatory = $True)]
     [string]
-    $ADBHost,
+    $AdbHost,
 
     [Parameter(Mandatory = $True)]
     [string]
@@ -34,7 +34,7 @@ param(
 )
 function DeployJob([string] $AdbToken, [string] $JobDefFilePath, [string] $CodePath, [string] $NotebookPathRoot, [string]$Env, [string]$Region, [string] $ClusterId) {
     # upload/override notebooks to target/prod/dev databricks
-    $env:DATABRICKS_HOST = $ADBHost
+    $env:DATABRICKS_HOST = $AdbHost
     $env:DATABRICKS_TOKEN = $AdbToken
     databricks workspace import_dir $CodePath $NotebookPathRoot -o
     Write-Host "notebooks imported`n"

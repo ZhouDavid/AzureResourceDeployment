@@ -11,9 +11,14 @@ param(
 
     [Parameter(Mandatory = $True)]
     [string]
-    $DatabricksToken 
+    $DatabricksToken,
+
+    [Parameter(Mandatory = $True)]
+    [string]
+    $DBHostRegion
 )
 
 # setup access
+$env:DATABRICKS_HOST="https://$DBHostRegion.azuredatabricks.net"
 $env:DATABRICKS_TOKEN = $DatabricksToken
 databricks workspace export_dir $NotebookPath -o $ExportPath

@@ -6,7 +6,7 @@ foreach ($regionSpec in $jsonObj.RegionSpecs){
         Write-Debug $SubId
         $region = $regionSpec.RegionAlias
         $env = $regionSpec.Environment
-        $eventSubName = "racktelemetry"
+        $eventSubName = "racktelemetry-adl"
         $rg = "spkl-adl-rt-$env-$region-0"
         $storName = "spkladlrt$env$region"+"x0"
         $destQueueName = $eventSubName
